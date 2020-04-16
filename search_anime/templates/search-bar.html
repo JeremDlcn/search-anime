@@ -1,0 +1,10 @@
+<section id="search">
+	<div>
+		<input type="text" name="search-bar" id="search-bar">
+		{% if first: %}<p class="mobile-hide">Entrez le nom de l'anime ici</p>{% endif %}
+	</div>
+	<button id="search-now">
+		{% if first: %}<p class="desktop-hide">Rechercher</p>{% endif %}<img src="../static/img/search.webp" class="search-icon" alt="recherche">
+	</button>
+</section>
+

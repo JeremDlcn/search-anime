@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="theme-color" content="#FFDD00" />
+		<meta name="description" content="Search Anime">
+		<meta name="keywords" content="Anime, search, légale, plateforme, streaming, regarder">
+		<link rel="icon" type="icon/png" href="{{ url_for('static', filename='img/favicon.png') }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+		<title>{{ title }}</title>
+	</head>
+
+	<body {% if not first: %}class="clip"{% endif %}>
+		<header {% if not first: %}class="searchfield"{% endif %}>
+			<img src="{{ url_for('static', filename='img/logo.webp') }}" alt="" class="logo">
+			{% block head %}
+			{% endblock	%}
+			<img src="{{ url_for('static', filename='img/substract.webp') }}" alt="" class="deco-slice">
+		</header>
+				<main>
+				{% block main %}
+				{% endblock	%}
+				</main>
+		<div class="deco-thin"></div>
+		<div class="deco-large mobile-hide"></div>
+		<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+	</body>
+
+</html>

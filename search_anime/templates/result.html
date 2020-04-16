@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block head %}
+	{% include 'search-bar.html' %}
+{% endblock %}
+
+
+{% block main %}
+			<section id="poster">
+				<img src="{{ anime_img }}" alt="poster">
+			</section>
+				<section id="info">
+					<h1><strong>{{ anime_name }}</strong></h1>
+					<b>{{ anime_jap }}</b>
+					<p class="date">{{ anime_date }}</p>
+				</section>
+				<section id="streaming">
+					<div class="website">
+						<img src="../static/img/adn.webp" alt="">
+						<p class="adn">ADN</p>
+					</div>
+					<div class="website">
+						<img src="../static/img/wakanim.webp" alt="">
+						<p class="wakanim">Wakanim</p>
+					</div>
+					<div class="website">
+						<img src="../static/img/crunchyroll.webp" alt="">
+						<p class="crunchyroll">Crunchyroll</p>
+					</div>
+					<div class="website">
+						<img src="../static/img/netflix.webp" alt="">
+						<p class="netflix">Netflix</p>
+					</div>
+					<div class="website">
+						<img src="../static/img/unknown.webp" alt="">
+						<p>Indisponible</p>
+					</div>
+				</section>
+{% endblock %}
