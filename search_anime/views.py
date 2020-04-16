@@ -5,14 +5,6 @@ import requests
 app = Flask(__name__)
 
 
-# def get_img(name_anime):
-# 	view = requests.get(f"https://api.jikan.moe/v3/search/anime?q={name_anime}&limit=1").json()
-# 	get_id = view['results'][0]["mal_id"]
-# 	img = requests.get(f"https://api.jikan.moe/v3/anime/{get_id}/pictures").json()
-# 	get_img = img['pictures'][len(img['pictures'])-1]['large']
-# 	return get_img
-
-
 
 @app.route('/')
 def index():
@@ -27,9 +19,9 @@ def view(name):
 	source = requests.get(f'https://www.nautiljon.com/animes/{name}.html').text
 	soup = BeautifulSoup(source, 'lxml')
 
+
 	#get image
-	# named = name.replace('+', ' ')
-	# anime_img = get_img(named)
+	#anime_img = soup.find("img",)
 
 	#get informations
 	anime_name = soup.find("h1", class_="h1titre").find("span", attrs={"itemprop": "name"}).text
