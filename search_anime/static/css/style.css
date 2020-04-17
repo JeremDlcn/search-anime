@@ -134,7 +134,6 @@ main {
 
 .clip main {
 	gap: .7rem;
-	justify-self: center;
 	margin-bottom: 2rem;
 }
 
@@ -395,6 +394,7 @@ header #search-now {
 		display: flex;
 		justify-content: center;
 		grid-row: span 2;
+		margin-right: 5rem;
 	}
 	#poster img {
 		height: 55vh;

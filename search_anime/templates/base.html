@@ -13,7 +13,9 @@
 
 	<body {% if not first: %}class="clip"{% endif %}>
 		<header {% if not first: %}class="searchfield"{% endif %}>
-			<img src="{{ url_for('static', filename='img/logo.webp') }}" alt="" class="logo">
+			<a href="{{ url_for('index') }}">
+				<img src="{{ url_for('static', filename='img/logo.webp') }}" alt="" class="logo">
+			</a>
 			{% block head %}
 			{% endblock	%}
 			<img src="{{ url_for('static', filename='img/substract.webp') }}" alt="" class="deco-slice">
@@ -24,7 +26,8 @@
 				</main>
 		<div class="deco-thin"></div>
 		<div class="deco-large mobile-hide"></div>
-		<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/search.js') }}"></script>
+		{% if not first: %}<script src="{{ url_for('static', filename='js/main.js') }}"></script>{% endif %}
 	</body>
 
 </html>
