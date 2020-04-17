@@ -15,25 +15,20 @@
 					<p class="date">{{ anime_date }}</p>
 				</section>
 				<section id="streaming">
-					<div class="website">
-						<img src="{{ url_for('static', filename='img/adn.webp') }}" alt="">
-						<p class="adn">ADN</p>
-					</div>
-					<div class="website">
-						<img src="{{ url_for('static', filename='img/wakanim.webp') }}" alt="">
-						<p class="wakanim">Wakanim</p>
-					</div>
-					<div class="website">
-						<img src="{{ url_for('static', filename='img/crunchyroll.webp') }}" alt="">
-						<p class="crunchyroll">Crunchyroll</p>
-					</div>
-					<div class="website">
-						<img src="{{ url_for('static', filename='img/netflix.webp') }}" alt="">
-						<p class="netflix">Netflix</p>
-					</div>
+					{% for site, link in anime_list: %}
+					{% set imgs = 'img/' + site.lower() + '.webp' %}
+					<a href="{{ link }}">
+						<div class="website">
+							<img src="{{ url_for('static', filename=imgs) }}" alt="">
+							<p class="{{ site.lower() }}">{{ site }}</p>
+						</div>
+					</a>
+					{% endfor %}
+					{% if anime_site[0] == 'unknown':%}
 					<div class="website">
 						<img src="{{ url_for('static', filename='img/unknown.webp') }}" alt="">
 						<p>Indisponible</p>
 					</div>
+					{% endif %}
 				</section>
 {% endblock %}

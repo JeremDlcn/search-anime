@@ -57,6 +57,9 @@ body:not(.clip) main{
 	margin-bottom: 10rem;
 }
 
+a {
+	text-decoration: none;
+}
 
 /*---Décoration---*/
 
