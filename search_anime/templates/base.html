@@ -27,7 +27,7 @@
 		<div class="deco-thin"></div>
 		<div class="deco-large mobile-hide"></div>
 		<script src="{{ url_for('static', filename='js/search.js') }}"></script>
-		{% if not first: %}<script src="{{ url_for('static', filename='js/main.js') }}"></script>{% endif %}
+		{% if res: %}<script src="{{ url_for('static', filename='js/main.js') }}"></script>{% endif %}
 	</body>
 
 </html>

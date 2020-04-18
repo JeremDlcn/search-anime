@@ -94,8 +94,40 @@ a {
 	display: none;
 }
 
+.not-found {
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	top: 25%;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
 
+.text-fixed {
+	color: var(--primary-color);
+	max-width: 80%;
+	font-size: 	1.4rem;
+	text-align: center;
+}
 
+.img-fixed {
+	width: 15rem;
+	margin: 4rem 0;
+	border-radius: 4px;
+}
+
+#send-home {
+	border: none;
+	background-color: var(--primary-color);
+	padding: .5rem 1rem;
+	font-weight: 900;
+	font-size: 1.0rem;
+	border-radius: 5px;
+	font-family: 'Harmonia';
+	cursor: pointer;
+}
 
 /*---Header---*/
 header {
@@ -340,7 +372,10 @@ header #search-now {
 	.deco-slice {
 		right: -5rem;
 	}
-
+	.text-fixed {
+		max-width: 50%;
+		font-size: 	3.7rem;
+	}
 	/*---Header---*/
 	.logo{
 		width: 6rem;

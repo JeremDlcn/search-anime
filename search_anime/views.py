@@ -7,7 +7,6 @@ app = Flask(__name__)
 def get_source(name):
 	name = name.replace('-', '+')
 	#setup parser
-	print(name)
 	source = requests.get(f'https://www.nautiljon.com/animes/{name}.html').text
 	soup = BeautifulSoup(source, 'lxml')
 	isValid = True
@@ -17,14 +16,13 @@ def get_source(name):
 		return isValid == False, soup
 
 
+
 def get_infos(name, speed, soup):
-
-
 	#get usual name
 	try:
 		anime_name = soup.find("h1", class_="h1titre").find("span", attrs={"itemprop": "name"}).text
 	except:
-		anime_name = '🕵️‍♂️ Anime not found, essayer avec un autre nom'
+		anime_name = '🕵️‍♂️ Anime non trouvé, essayer avec un autre nom'
 
 	#get japanese name
 	try:
@@ -69,13 +67,19 @@ def get_infos(name, speed, soup):
 	title = anime_name
 	
 	if speed:
-		anime_img =''
-		# anime_img = "http://nautiljon.com" + soup.find("a", attrs={"title": "Affiche Originale"}).get('href')
-		return title, anime_name, anime_jap, anime_date, anime_site, anime_list, anime_img
+		try:
+			anime_img = "http://nautiljon.com" + soup.find("a", attrs={"title": "Affiche Originale"}).get('href')
+		except:
+			anime_img = ""
+		finally:
+			return title, anime_name, anime_jap, anime_date, anime_site, anime_list, anime_img
 	else:
-		anime_req =''
-		# anime_req = "http://nautiljon.com" + soup.find("a", attrs={"title": "Affiche Originale"}).get('href')
-		return title, anime_name, anime_jap, anime_date, anime_site, anime_list, anime_req
+		try:
+			anime_req = "http://nautiljon.com" + soup.find("a", attrs={"title": "Affiche Originale"}).get('href')
+		except:
+			anime_req = ""
+		finally:
+			return title, anime_name, anime_jap, anime_date, anime_site, anime_list, anime_req
 
 
 
@@ -97,7 +101,10 @@ def index():
 
 @app.route('/v1/view/<name>')
 def see(name):
-	first=False
+	if name == '-' or name == '' or name == '+':
+		return redirect(url_for('index'))
+
+	res=True
 	isValid, soup = get_source(name)
 	if not isValid:
 		return redirect(url_for('index'))
@@ -108,15 +115,13 @@ def see(name):
 
 @app.route('/v2/view/<name>')
 def view(name):
-	if name == '-' or name == '' or name == '+' or isinstance(name,int):
+	if name == '-' or name == '' or name == '+':
 		return redirect(url_for('index'))
 	
-	first=False
+	res=True
 	isValid, soup = get_source(name)
-	print(isValid)
 	if not isValid:
-		return redirect(url_for('index'))
-
+		return redirect(url_for('notfound'))
 	title, anime_name, anime_jap, anime_date, anime_site, anime_list, anime_req = get_infos(name, False, soup)
 
 	#get image
@@ -128,6 +133,14 @@ def view(name):
 
 	return render_template("result.html", **locals())
 
+
+@app.route('/notfound')
+def notfound():
+	return render_template("notfound.html", title='Anime Introuvable')
+
+@app.errorhandler(Exception)
+def error(error):
+	return redirect(url_for('index'))
 
 
 if __name__ == '__main__':
