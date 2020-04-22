@@ -24,6 +24,7 @@
 	--wakanim: #EE2E30;
 	--crunchyroll: #F47522;
 	--netflix: #D4001B;
+	--jone: #FFF;
 
 	/* unit */
 	--card: 4.2rem;
@@ -261,6 +262,67 @@ header #search-now {
 }
 
 
+
+/*Toggle switch*/
+.switch {
+	display: flex;
+	width: 4rem;
+	height: 2rem;
+	position: absolute;
+	right: 2rem;
+	bottom: 2rem;
+}
+
+.switch input{
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider {
+	background-color: var(--dark-elements);
+	border-radius: 1rem;
+	transition: .2s;
+	height: 50%;
+	width: 70%;
+	display: flex;
+	align-items: center;
+}
+
+.slider::before {
+	content: '';
+	height: 1.5rem;
+	width: 1.5rem;
+	background-color: #545454;
+	box-shadow: -2px 0px 15px 1px rgba(0,0,0,0.5);
+	border-radius: 50%;
+	transition: .2s;
+}
+
+.slider::after {
+	content: 'speed mode';
+	position: absolute;
+	top: 1.8rem;
+	left: -.3rem;
+	font-size: .5rem;
+	letter-spacing: 0.06rem;
+}
+
+.switch input:checked + .slider {
+	background-color: var(--primary-color);
+}
+
+.switch input:checked + .slider::before {
+	transform: translateX(1.5rem);
+	background-color: var(--primary-color);
+}
+
+
+
+
+
+
+
 /* ---Result--- */
 /* ~~~~~~~~~~~~~~*/
 #poster img {
@@ -321,6 +383,9 @@ header #search-now {
 }
 .netflix {
 	color: var(--netflix);
+}
+.j-one {
+	color: var(--jone);
 }
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
@@ -422,6 +487,9 @@ header #search-now {
 	.desktop-hide{
 		display: none;
 	}
+	.switch {
+		right: 6rem;
+	}
 
 	/* Result */
 	.clip main{
@@ -433,6 +501,7 @@ header #search-now {
 		justify-content: center;
 		grid-row: span 2;
 		margin-right: 5rem;
+		overflow: hidden;
 	}
 	#poster img {
 		height: 55vh;

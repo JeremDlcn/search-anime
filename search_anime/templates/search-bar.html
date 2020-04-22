@@ -1,9 +1,9 @@
 <section id="search">
 	<div>
-		<input type="text" name="search-bar" id="search-bar">
+		<input type="text" name="search-bar" id="search-bar" aria-label="champ de recherche">
 		{% if first: %}<p class="mobile-hide">Entrez le nom de l'anime ici</p>{% endif %}
 	</div>
-	<button id="search-now">
+	<button id="search-now" aria-label="bouton de recherche">
 		{% if first: %}<p class="desktop-hide">Rechercher</p>{% endif %}<img src="{{ url_for('static', filename='img/search.webp')}}" class="search-icon" alt="recherche">
 	</button>
 </section>

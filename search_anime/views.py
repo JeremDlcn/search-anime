@@ -43,8 +43,16 @@ def get_infos(name, speed, soup):
 	try:
 		anime_site = soup.find("ul", class_="mb10").find("span", string='Simulcast / streaming : ').parent.find_all('a')
 		#sort streaming platform
+		tmp =''
 		for item in anime_site:
-			anime_web.append(item.text)
+			if item.text == 'J-One':
+				tmp = item.text
+				print(tmp)
+			else:
+				anime_web.append(item.text)
+		if tmp != '':
+			anime_web.append(tmp)
+			print(anime_web)
 	except:
 		anime_site = ['unknown']
 	
