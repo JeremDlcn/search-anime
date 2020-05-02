@@ -11,7 +11,7 @@
 		<title>{{ title }}</title>
 	</head>
 
-	<body {% if not first: %}class="clip"{% endif %}>
+	<body {% if clip: %}class="clip"{% endif %} {% if ser: %}class="ser"{% endif %}>
 		<header {% if not first: %}class="searchfield"{% endif %}>
 			<a href="{{ url_for('index') }}">
 				<img src="{{ url_for('static', filename='img/logo.webp') }}" alt="" class="logo">
@@ -20,18 +20,18 @@
 			{% endblock	%}
 			<img src="{{ url_for('static', filename='img/substract.webp') }}" alt="" class="deco-slice">
 		</header>
-				<main>
-				{% block main %}
-				{% endblock	%}
-				</main>
-		<label class="switch">
-				<input type="checkbox">
-				<span class="slider"></span>
-		</label>
+			<main>
+			{% block main %}
+			{% endblock	%}
+			</main>
+		{% block switch %}
+		{% endblock	%}
 		<div class="deco-thin"></div>
-		<div class="deco-large mobile-hide"></div>
+		<div class="deco-large mobile-hide{% if flight: %} flight{% endif %}"></div>
 		<script src="{{ url_for('static', filename='js/search.js') }}"></script>
 		{% if res: %}<script src="{{ url_for('static', filename='js/main.js') }}"></script>{% endif %}
+		{% if res: %}<script src="{{ url_for('static', filename='js/poster.js') }}"></script>{% endif %}
+		{% if ser: %}<script src="{{ url_for('static', filename='js/links.js') }}"></script>{% endif %}
 	</body>
 
 </html>

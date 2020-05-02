@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block head %}
+	{% include 'search-bar.html' %}
+{% endblock %}
+
+
+{% block main %}
+	
+	{% if not search_list[0] %}
+		<h1 class="no-result">Auncun résultat</h1>
+	{% endif %}
+	
+
+	{% for item in search_list %}
+	<a href="{{ item['link'] }}">
+		<div class="item-search">
+			<div class="item-img">
+				<img src="{{ item['img'] }}" alt="poster">
+			</div>
+			<div class="item-infos">
+				<h2>{{ item['name'] }}</h2>
+				<b>{{ item['date'] }}</b>
+			</div>
+		</div>
+	</a>
+	{% endfor %}
+
+{% endblock %}
+
+{% block switch %}
+	{% include 'switch.html' %}
+{% endblock	%}

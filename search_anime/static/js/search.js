@@ -2,14 +2,7 @@
 function search() {
 	let url = document.querySelector('#search-bar').value;
 	url = url.replace(/ /g, '-').toLowerCase();
-	if (document.querySelector('.switch input').checked == true) {
-		window.location.href = `/v1/view/${url}`	
-
-	}
-	else {
-		window.location.href = `/v2/view/${url}`
-	}
-	
+	window.location.href = `/search/${url}`;
 }
 
 
@@ -22,4 +15,3 @@ document.querySelector('#search-bar').addEventListener('keyup', ()=>{
 		search()
 	}
 });
-

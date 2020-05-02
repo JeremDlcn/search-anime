@@ -54,12 +54,13 @@ body {
 	position: relative;
 }
 
-body:not(.clip) main{
+body:not(.clip):not(.ser) main{
 	margin-bottom: 10rem;
 }
 
 a {
 	text-decoration: none;
+	color: inherit;
 }
 
 /*---Décoration---*/
@@ -268,7 +269,7 @@ header #search-now {
 	display: flex;
 	width: 4rem;
 	height: 2rem;
-	position: absolute;
+	position: fixed;
 	right: 2rem;
 	bottom: 2rem;
 }
@@ -318,8 +319,46 @@ header #search-now {
 }
 
 
+/* ---Search--- */
+/* ~~~~~~~~~~~~~~*/
+.ser main{
+	height: 100%;
+	margin: 0; 
+	display: flex;
+	flex-direction: column;
+}
 
+.ser main a {
+	margin-bottom: 2rem;
+}
+.item-search {
+	height: 7rem;
+	display: flex;
+}
 
+.item-img {
+	height: 100%;
+	overflow: hidden;
+	min-width: 5rem;
+	max-width: 5rem;
+}
+.item-img img {
+	height: 100%;
+	object-fit: cover;
+	width: 100%;
+}
+
+.item-infos {
+	margin-left: 1rem;
+}
+.item-infos h2 {
+	font-size: 1rem;
+}
+.item-infos b {
+	font-size: .6rem;
+	opacity: .7;
+	font-weight: normal;
+}
 
 
 
@@ -387,6 +426,15 @@ header #search-now {
 .j-one {
 	color: var(--jone);
 }
+
+
+/*Other*/
+.no-result {
+	text-align: center;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
@@ -449,9 +497,19 @@ header #search-now {
 	.title {
 		font-size: 3.5rem;
 	}
+	.ser main {
+		padding: 0px 25vw;
+		margin-top: 5rem;
+	}
+
+	.flight {
+		justify-self: flex-end;
+		position: relative;
+		bottom: 15rem;
+	}
 
 	/*---Main---*/
-	body:not(.clip) main{
+	body:not(.clip):not(.ser) main{
 		padding: 0 25vw;
 		margin-bottom: 5rem;
 	}
@@ -489,6 +547,24 @@ header #search-now {
 	}
 	.switch {
 		right: 6rem;
+		top: 5rem;
+		position: absolute;
+	}
+
+	/* Search */
+	.item-search {
+		height: 10rem;
+	}
+	.item-img {
+		min-width: 7rem;
+		max-width: 7rem;
+	}
+	.item-infos h2 {
+		font-size: 1.4rem;
+	}
+
+	.item-infos b {
+		font-size: 1rem ;
 	}
 
 	/* Result */
