@@ -1,0 +1,6 @@
+User-Agent: *
+Allow: /
+Disallow: /search/
+Disallow: /v1/view/
+Disallow: /v2/view/
+Disallow: /notfound
