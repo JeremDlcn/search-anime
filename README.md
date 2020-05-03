@@ -20,9 +20,9 @@ L'application permet aussi de visualisé le détail d'une série plus rapidement
 - Le langage Python 3.8
 - L'installeur de paquets pip 20.1
 - Bibliothèque Python :
-		- Beautiful Soup 4 (Webscraping)
-		- lxml (Parser)
-		- requests (requête HTTP)
-		- gunicorn (déploiement en prod)
+	- Beautiful Soup 4 (Webscraping)
+	- lxml (Parser)
+	- requests (requête HTTP)
+	- gunicorn (déploiement en prod)
 ## Déploiement de l'application
 L'application à été déployé sur [Heroku](https://heroku.com) qui permet de déployé gratuitement des applications webs (NodeJS, Python, Java, Go, PHP, ...)
