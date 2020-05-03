@@ -94,7 +94,13 @@ def get_img(name_anime):
 def index():
 	return render_template("index.html", clip=False, first=True, title='Anime Search')
 
+@app.route('/robots.txt')
+def robots():
+	return redirect(url_for('static', filename='robots.txt'))
 
+@app.route('/googlee7946324b3d5277b.html')
+def property():
+	return redirect(url_for('static', filename='googlee7946324b3d5277b.html'))
 
 @app.route('/v1/view/<name>')
 def see(name):
