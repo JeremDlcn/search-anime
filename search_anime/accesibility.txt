@@ -1,0 +1,71 @@
+Handicap
+--------
+	Visuel: pour les personnes ayant une perte de vue partielle faire des couleurs qui se distingue bien
+	pour les personnes qui on une perte totale on utilise les balises pour lecteurs d'écrans
+
+	Auditif: mettre en place des sous-titres et textes explicatifs pour les fichier audio ou vidéo
+
+	Moteur:
+	- incapacité de déplacer la souris: gérer les déplacement par clavier (Tab), mettre en place une méthode pour sauter les gros contenu
+	- difficulté à déplacer la souris: être tolérant à l'erreur (popup de confirmation), éviter les petits liens
+
+
+Recommandations
+--------------
+
+perception:
+- proposer du texte alternatifs pour du contenu non textuels
+- proposer des sous-titres pour tout contenu multimédia
+- contenus adaptable: zoom, police augmentable, version audio
+- contraste des contenus pour bien les distinguer
+
+Utilisabilité:
+- rendre les fonctionnalités accesible par clavier, tab et raccourci clavier
+- laisser le temps à l'utilisateur de lire le contenu
+- éviter le contenu epileptique
+
+
+Compréhension:
+- textes lisibles et facile à comprendre
+- les apparations de contenus doivent être prévisibles
+- aide à l'évitement de fausse manipulation
+- associer des icônes au bouton de formulaire
+
+Compatibilité:
+- compatible tout les navigateurs et techno de liseurs,...
+
+
+
+
+BALISES
+------
+<html lang="">
+- toujours indiqué la langue dans la balise html
+- la modifié en cas de changement de langue
+
+
+
+<a href="">
+- ajouté une balise title pour rendre compréhensible l'utilité du lien si besoin (si pas de texte par exemple, si simplement une image) et aria-label(plus important que tout)
+- ne pas mettre de title ou aria-label si l'intérieur est explicite
+
+<img src="" alt="">:
+- intégre une balise alt: doit être vide si c'est un image décorative, doit avoir une description brève si elle a un sens dans la page(ne doit pas répéter un texte qui lui est accolé)
+
+
+<input>
+- associé à un label avec un id et un attribut for
+- si pas de label visible alors ajouté aria-label et title
+- les erreurs doivent être bien indiqué
+- ils doivent être naviguable par clavier
+- pour les champs obligatoire (required) ajouté aussi aria-required="true"
+
+
+icônes et éléments décoratifs (::before et ::after)
+- préférable de ne pas les lire par lecteurs d'écrans, y ajouté aria-hidden="true"
+- empêcher la navigation par clavier avec l'attribut  tabindex="-1"
+
+
+role=""
+
+aria
