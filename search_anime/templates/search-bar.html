@@ -1,6 +1,6 @@
 <section id="search">
 	<div>
-		<input type="text" name="search-bar" id="search-bar" aria-label="champ de recherche">
+		<input type="text" name="search-bar" id="search-bar" aria-label="champ de recherche" value="{% if ser: %}{{ title }}{% endif %}">
 		{% if first: %}<p class="mobile-hide">Entrez le nom de l'anime ici</p>{% endif %}
 	</div>
 	<button id="search-now" aria-label="bouton de recherche">
