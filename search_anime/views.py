@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import requests
 
 app = Flask(__name__)
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 31536000
 
 def get_source(name):
 	#setup parser

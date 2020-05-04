@@ -1,5 +1,6 @@
 @font-face {
     font-family: 'Harmonia';
+    font-display: swap;
     src: url('../font/H-Regular.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
@@ -7,6 +8,7 @@
 
 @font-face {
     font-family: 'Harmonia';
+    font-display: swap;
     src: url('../font/H-Bold.otf') format('opentype');
     font-weight: bold;
     font-style: normal;
