@@ -17,7 +17,7 @@
 				<section id="streaming">
 					{% for site, link in anime_list: %}
 					{% set imgs = 'img/' + site.lower() + '.webp' %}
-					<a href="{{ link }}">
+					<a href="{{ link }}" target="_blank">
 						<div class="website">
 							<img src="{{ url_for('static', filename=imgs) }}" alt="">
 							<p class="{{ site.lower() }}">{{ site }}</p>
