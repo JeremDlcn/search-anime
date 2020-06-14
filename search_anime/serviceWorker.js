@@ -1,4 +1,5 @@
 const cacheName = 'static-cache';
+console.log("Enter");
 
 //dès l'installation on appelle les fichiers de l'app
 self.addEventListener('install', async e => {
