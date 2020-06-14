@@ -183,6 +183,11 @@ def notfound():
 def error(error):
 	return redirect(url_for('index'))
 
+@app.route('/sw.js', methods=['GET'])
+def sw():
+	return app.send_static_file('sw.js')
+
+
 
 if __name__ == '__main__':
 	app.run()

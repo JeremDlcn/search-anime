@@ -13,7 +13,7 @@
 		<meta property="og:url" content="https://search-anime.herokuapp.com/"/>
 		<meta property="og:image" content="{{ url_for('static', filename='img/logo.webp') }}"/>
 		<meta property="og:description" content="Vous voulez regardez un anime légalement ? Search Anime vous dira où le regarder légalement."/>
-		<link rel="manifest" crossorigin="use-credentials" href="static/manifest.json">
+		<link rel="manifest" crossorigin="use-credentials" href="{{ url_for('static', filename='manifest.json') }}">
 		<title>{{ title }}</title>
 	</head>
 
@@ -42,7 +42,7 @@
 	<script>
 		if('serviceWorker' in navigator){
 		    try {
-		      navigator.serviceWorker.register('serviceWorker.js');
+		      navigator.serviceWorker.register('sw.js');
 		      console.log("Registered");
 		    } catch (error) {
 		      console.log(error);
