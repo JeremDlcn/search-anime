@@ -177,9 +177,6 @@ def search(name):
 def notfound():
 	return render_template("notfound.html", title='Anime Introuvable')
 
-@app.route('/sw.js', methods=['GET'])
-def sw():
-	return app.send_static_file('sw.js')
 
 @app.errorhandler(Exception)
 def error(error):
