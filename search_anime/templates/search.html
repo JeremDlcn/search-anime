@@ -11,20 +11,22 @@
 		<h1 class="no-result">Auncun résultat</h1>
 	{% endif %}
 	
+	<section>
+		{% for item in search_list %}
+		<a href="{{ item['link'] }}">
+			<div class="item-search">
+				<div class="item-img">
+					<img src="{{ item['img'] }}" alt="poster">
+				</div>
+				<div class="item-infos">
+					<h2>{{ item['name'] }}</h2>
+					<b>{{ item['date'][-4:] }}</b>
+				</div>
+			</div>
+		</a>
+		{% endfor %}
+	</section>
 
-	{% for item in search_list %}
-	<a href="{{ item['link'] }}">
-		<div class="item-search">
-			<div class="item-img">
-				<img src="{{ item['img'] }}" alt="poster">
-			</div>
-			<div class="item-infos">
-				<h2>{{ item['name'] }}</h2>
-				<b>{{ item['date'] }}</b>
-			</div>
-		</div>
-	</a>
-	{% endfor %}
 
 {% endblock %}
 
