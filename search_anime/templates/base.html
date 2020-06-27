@@ -38,14 +38,4 @@
 		{% if res: %}<script src="{{ url_for('static', filename='js/poster.js') }}"></script>{% endif %}
 		{% if ser: %}<script src="{{ url_for('static', filename='js/links.js') }}"></script>{% endif %}
 	</body>
-	<script>
-		if('serviceWorker' in navigator){
-		    try {
-		      navigator.serviceWorker.register('sw.js');
-		    } catch (error) {
-		      console.log(error);
-		    }
-		  }
-	</script>
-
 </html>
