@@ -160,7 +160,7 @@ def search(name):
 		for item in element:
 			disc = {}
 			disc['link'] = item.find('td', class_="image").find('a').get('href').replace('/animes/','/v2/view/').replace('.html', '')
-			disc['img'] = "http://nautiljon.com" + item.find('td', class_="image").find('img').get('src')
+			disc['img'] = "https://nautiljon.com" + item.find('td', class_="image").find('img').get('src')
 			disc['name'] = item.find('td', class_="left vtop").select_one('td > a').text
 			disc['date'] = item.select_one('tr td:nth-of-type(7)').text
 			search_list.append(disc)
