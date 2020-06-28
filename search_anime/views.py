@@ -3,8 +3,8 @@ from bs4 import BeautifulSoup
 import requests
 
 app = Flask(__name__)
-# app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 31536000  #production cache
-app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0  # developpement refresh
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 31536000  #production cache
+# app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0  # developpement refresh
 app.config.update(
     SESSION_COOKIE_SECURE=True,
     SESSION_COOKIE_HTTPONLY=True,

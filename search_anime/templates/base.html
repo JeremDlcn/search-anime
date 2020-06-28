@@ -7,7 +7,7 @@
 		<meta name="description" content="Search Anime">
 		<meta name="keywords" content="Anime, search, légale, plateforme, streaming, regarder">
 		<link rel="icon" type="icon/png" href="{{ url_for('static', filename='img/favicon.png') }}" />
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/style-0.3.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style-031.css') }}">
 		<meta property="og:title" content="Search Anime"/>
 		<meta property="og:type" content="website"/>
 		<meta property="og:url" content="https://search-anime.herokuapp.com/"/>
@@ -35,7 +35,7 @@
 		<div class="deco-large mobile-hide{% if flight: %} flight{% endif %}"></div>
 		<script src="{{ url_for('static', filename='js/search.js') }}"></script>
 		{% if res: %}<script src="{{ url_for('static', filename='js/main.js') }}"></script>{% endif %}
-		{% if res: %}<script src="{{ url_for('static', filename='js/poster.js') }}"></script>{% endif %}
+		<!-- {% if ser: %}<script src="{{ url_for('static', filename='js/poster.js') }}"></script>{% endif %} -->
 		{% if ser: %}<script src="{{ url_for('static', filename='js/links.js') }}"></script>{% endif %}
 		{% if ser: %}<script src="{{ url_for('static', filename='js/scroll.js') }}"></script>{% endif %}
 	</body>
