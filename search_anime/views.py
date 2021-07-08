@@ -1,12 +1,7 @@
 from flask import Flask, render_template, redirect, url_for
 from bs4 import BeautifulSoup
-from flask_caching import Cache
 import requests
-config = {
-    "DEBUG": True,          # some Flask specific configs
-    "CACHE_TYPE": "SimpleCache",  # Flask-Caching related configs
-    "CACHE_DEFAULT_TIMEOUT": 300
-}
+
 
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 31536000  #production cache
@@ -17,8 +12,6 @@ app.config.update(
     SESSION_COOKIE_SAMESITE='None',
 )
 
-app.config.from_mapping(config)
-cache = Cache(app)
 
 def get_source(name):
 	#setup parser
@@ -156,7 +149,6 @@ def view(name):
 
 
 @app.route('/search/<name>')
-@cache.cached(timeout=50)
 def search(name):
 	ser = True
 	title = name.replace('-', ' ')
