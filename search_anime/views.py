@@ -99,7 +99,7 @@ def get_img(name_anime):
 
 @app.route('/')
 def index():
-	return render_template("index.html", clip=False, first=True, title='Anime Search')
+	return render_template("index.html", clip=False, first=True, title='search anime')
 
 @app.route('/robots.txt')
 def robots():
@@ -186,3 +186,4 @@ def error(error):
 
 if __name__ == '__main__':
 	app.run()
+	# app.run(debug=True) # developpement
