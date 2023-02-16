@@ -14,7 +14,7 @@ MarkupSafe==2.0.1
 requests==2.25.1
 soupsieve==2.2.1
 urllib3==1.26.6
-Werkzeug==2.0.1
+Werkzeug==2.2.3
 amqp==2.5.2
 anyjson==0.3.3
 billiard==3.6.3.0
